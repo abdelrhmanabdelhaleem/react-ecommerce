@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+:root {
+  --main-color: #ff6f00;
+  --main-color-hover: #e65100;
+  --light-color: #fff8f1;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc107;
+  --accent-color: #ff3d00;
+  --text-color: #333;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: #fdfdfd;
+}
+
+.nav-link {
+  transition: unset !important;
+}
+
+.active-link {
+  background-color: var(--main-color) !important;
+  color: var(--light-color) !important;
+  border-radius: 5px;
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a,
+a:hover {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
+.product {
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background-color: white;
+}
+
+.product:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.font-sm {
+  font-size: 0.75rem;
+}
+
+.text-main {
+  color: var(--main-color);
+}
+
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+
+.btn-main {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-main:hover {
+  background-color: var(--main-color-hover);
+  color: white;
+}
+
+.btn-main:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+  color: #666;
+  border-color: #ccc;
+}
+
+.btn-main:disabled:hover {
+  background-color: #ccc;
+  color: #666;
+}
+
+.active {
+  background-color: var(--main-color) !important;
+  color: var(--light-color) !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 4px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}

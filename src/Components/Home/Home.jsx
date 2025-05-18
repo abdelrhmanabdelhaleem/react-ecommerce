@@ -1,11 +1,12 @@
 import "./Home.module.css";
 import Loader from "../loader/Loader";
-import Product from "../product/product";
+
 import MainSlider from "../Main-slider/MainSlider";
 import CategoriesSlider from "./../CategoriesSlider/CategoriesSlider";
 import UseProducts from "../../Hooks/useProducts";
 import UseCategories from "../../Hooks/useCategories";
 import { Helmet } from "react-helmet";
+import Product from "./../Product/Product";
 
 export default function Home() {
   let {

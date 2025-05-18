@@ -11,7 +11,6 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import NotFound from "../Components/NotFound/NotFound";
 import WishList from "../Components/WishList/WishList";
-import Profile from "../Components/Profile/Profile";
 import ProtectedRoute from "../routes/ProtectedRoute";
 import PublicRoute from "../routes/PublicRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -86,14 +85,7 @@ function App() {
             </ProtectedRoute>
           ),
         },
-        {
-          path: "profile",
-          element: (
-            <ProtectedRoute>
-              <Profile></Profile>
-            </ProtectedRoute>
-          ),
-        },
+
         {
           path: "checkOut",
           element: (

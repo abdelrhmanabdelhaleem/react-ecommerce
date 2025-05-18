@@ -19,10 +19,10 @@ import UserProvider from "../context/UserContext";
 
 import CartProvider from "../context/cartContext";
 import CheckOut from "./../Components/checkOut/checkOut";
-import AllOrders from "../Components/allorders/AllOrders";
 import WishListProvider from "../context/WishListContext";
 import ForgotPassword from "../Components/ForgotPassword/ForgotPassword";
 import { ToastContainer } from "react-toastify";
+import AllOrders from "./../Components/AllOrders/AllOrders";
 function App() {
   let query = new QueryClient();
   const routes = createBrowserRouter([
@@ -106,7 +106,7 @@ function App() {
           path: "allorders",
           element: (
             <ProtectedRoute>
-              <AllOrders></AllOrders>
+              <AllOrders />
             </ProtectedRoute>
           ),
         },

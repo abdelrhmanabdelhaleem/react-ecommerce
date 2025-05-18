@@ -1,7 +1,7 @@
 import { wishListContext } from "../../context/WishListContext";
 import Loader from "../loader/Loader";
 import { Link } from "react-router";
-import Product from "../product/product";
+import Product from "./../Product/Product";
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
 

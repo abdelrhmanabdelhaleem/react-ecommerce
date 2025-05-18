@@ -1,5 +1,5 @@
 import "./Products.module.css";
-import Product from "../product/product";
+import Product from "./../Product/Product";
 import Loader from "../loader/Loader";
 import { useState, useEffect, useContext } from "react";
 import UseProducts from "../../Hooks/useProducts";

@@ -19,13 +19,27 @@ export default function Products() {
   }, [data]);
 
   let handleSort = async (value) => {
-    let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/products?sort=${value}`
-    );
-    console.log("🚀 ~ handleSort ~ data:", data.data);
-    setProductsList(data.data);
-    setAllProducts(data.data);
+    if (value === "-rate") {
+      const sortedHighToLow = [...data].sort(
+        (a, b) => b.ratingsAverage - a.ratingsAverage
+      );
+      setProductsList(sortedHighToLow);
+      setAllProducts(sortedHighToLow);
+    } else if (value === "rate") {
+      const sortedLowToHigh = [...data].sort(
+        (a, b) => a.ratingsAverage - b.ratingsAverage
+      );
+      setProductsList(sortedLowToHigh);
+      setAllProducts(sortedLowToHigh);
+    } else {
+      let response = await axios.get(
+        `https://ecommerce.routemisr.com/api/v1/products?sort=${value}`
+      );
+      setProductsList(response?.data.data);
+      setAllProducts(response?.data.data);
+    }
   };
+
   const handleChange = (e) => {
     const value = e.target.value.toLowerCase();
     const filtered = allProducts.filter((product) =>
@@ -61,9 +75,9 @@ export default function Products() {
           </div>
         </div>
         <div className="col-md-6 mt-3 text-end">
-          <div className="dropdown">
+          <div className="dropdown bg-transparent">
             <button
-              className="btn btn-main dropdown-toggle"
+              className="btn btn-main dropdown-toggle "
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -83,7 +97,23 @@ export default function Products() {
                   className="dropdown-item"
                   href="#"
                   onClick={() => handleSort("price")}>
-                  low Price
+                  Low Price
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => handleSort("-rate")}>
+                  High Rating
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => handleSort("rate")}>
+                  Low Rating
                 </a>
               </li>
             </ul>

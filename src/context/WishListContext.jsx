@@ -21,7 +21,6 @@ const WishListProvider = ({ children }) => {
     } else {
       setwishListProducts([]);
     }
-    console.log("🚀 ~ getWishListProducts ~ data:", data);
   };
 
   let addProductToWishList = async (id) => {

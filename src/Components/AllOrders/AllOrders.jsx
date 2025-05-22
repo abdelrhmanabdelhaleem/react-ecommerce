@@ -65,13 +65,31 @@ const AllOrders = () => {
                         className="img-fluid object-fit-contain mb-2"
                         style={{ height: "100px" }}
                       />
-                      <h6 className="small">{product.product.title}</h6>
-                      <span className="text-muted small">
+                      <h6 className="small">
+                        {product.product.title.split(" ").slice(0, 2).join(" ")}
+                      </h6>
+                      <span>count:{product.count}</span> <br />
+                      <span className="text-main small ">
                         {product.price} EGP
                       </span>
                     </div>
                   </div>
                 ))}
+                <span>
+                  Total Order Price:{" "}
+                  <span className="text-main">{order.totalOrderPrice} EGP</span>
+                </span>
+                <p className="m-0 py-1">
+                  Created At:{" "}
+                  {new Date(order.createdAt).toLocaleString("en-US", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </p>
               </div>
             </div>
           </div>

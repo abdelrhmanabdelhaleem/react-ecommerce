@@ -4,6 +4,7 @@ import Loader from "../loader/Loader";
 import { useState, useEffect, useContext } from "react";
 import UseProducts from "../../Hooks/useProducts";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 export default function Products() {
   let { data, isError, isLoading } = UseProducts();
@@ -17,6 +18,14 @@ export default function Products() {
     }
   }, [data]);
 
+  let handleSort = async (value) => {
+    let { data } = await axios.get(
+      `https://ecommerce.routemisr.com/api/v1/products?sort=${value}`
+    );
+    console.log("🚀 ~ handleSort ~ data:", data.data);
+    setProductsList(data.data);
+    setAllProducts(data.data);
+  };
   const handleChange = (e) => {
     const value = e.target.value.toLowerCase();
     const filtered = allProducts.filter((product) =>
@@ -33,7 +42,7 @@ export default function Products() {
       <Helmet>
         <title>Products</title>
       </Helmet>
-      <div className="row">
+      <div className="row align-items-center">
         <div className="col-md-6 mt-3">
           <div className="input-group">
             <input
@@ -49,6 +58,35 @@ export default function Products() {
               id="basic-addon2">
               search
             </span>
+          </div>
+        </div>
+        <div className="col-md-6 mt-3">
+          <div className="dropdown">
+            <button
+              className="btn btn-main dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sort Products
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => handleSort("-price")}>
+                  High Price
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => handleSort("price")}>
+                  low Price
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

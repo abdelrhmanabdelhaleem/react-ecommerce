@@ -42,7 +42,7 @@ export default function Products() {
       <Helmet>
         <title>Products</title>
       </Helmet>
-      <div className="row align-items-center">
+      <div className="row align-items-center ">
         <div className="col-md-6 mt-3">
           <div className="input-group">
             <input
@@ -60,7 +60,7 @@ export default function Products() {
             </span>
           </div>
         </div>
-        <div className="col-md-6 mt-3">
+        <div className="col-md-6 mt-3 text-end">
           <div className="dropdown">
             <button
               className="btn btn-main dropdown-toggle"

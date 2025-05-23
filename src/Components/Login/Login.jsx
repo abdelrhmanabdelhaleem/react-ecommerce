@@ -28,7 +28,7 @@ export default function Login() {
       .finally(() => setLoading(false));
   };
 
-  const validationSchema = Yup.object({
+  const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Please enter a valid email address")
       .required("Email is required"),

@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import { userContext } from "../../context/UserContext";
 import * as Yup from "yup";
-import { Helmet } from "react-helmet";
 
 const ForgotPassword = () => {
   const [flag, setflag] = useState(1);

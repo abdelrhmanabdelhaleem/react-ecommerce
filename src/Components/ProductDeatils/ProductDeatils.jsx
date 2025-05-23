@@ -57,7 +57,6 @@ export default function ProductDeatils() {
     let { data } = await axios.get(
       `https://ecommerce.routemisr.com/api/v1/products?category[in]=${categoryId}`
     );
-
     setproductRelated(data.data);
   };
   useEffect(() => {

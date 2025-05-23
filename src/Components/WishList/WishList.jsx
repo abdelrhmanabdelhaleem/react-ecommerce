@@ -6,8 +6,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet";
 
 export default function WishList() {
-  const { wishListProducts, addProductToWishList } =
-    useContext(wishListContext);
+  const { wishListProducts } = useContext(wishListContext);
   return (
     <>
       <Helmet>

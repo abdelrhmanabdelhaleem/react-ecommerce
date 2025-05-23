@@ -15,7 +15,6 @@ import ProtectedRoute from "../routes/ProtectedRoute";
 import PublicRoute from "../routes/PublicRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import UserProvider from "../context/UserContext";
-
 import CartProvider from "../context/cartContext";
 import CheckOut from "./../Components/checkOut/checkOut";
 import WishListProvider from "../context/WishListContext";

@@ -5,7 +5,7 @@ import Home from "../Components/Home/Home";
 import Products from "../Components/Products/Products";
 import ProductDeatils from "../Components/ProductDeatils/ProductDeatils";
 import Categories from "../Components/Categories/Categories";
-import Brands from "../Components/Brands/Brands";
+
 import Cart from "../Components/Cart/Cart";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
@@ -60,14 +60,7 @@ function App() {
             </ProtectedRoute>
           ),
         },
-        {
-          path: "brands",
-          element: (
-            <ProtectedRoute>
-              <Brands></Brands>
-            </ProtectedRoute>
-          ),
-        },
+
         {
           path: "cart",
           element: (
